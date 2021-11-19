@@ -28,7 +28,6 @@
             $menu = $this->db->query($queryMenu)->result_array();
             ?>
 
-
             <!-- Heading -->
             <?php foreach($menu as $m) : ?>
             <div class="sidebar-heading">
@@ -58,7 +57,7 @@
                        <?php else: ?>
                         <li class="nav-item ">
                        <?php endif; ?>
-                       <a class="nav-link" href="<?= $sm['url']; ?>">
+                       <a class="nav-link pb-0" href="<?= $sm['url']; ?>">
                           <i class="<?= $sm['icon']; ?>"></i>
                           <span><?= $sm['title']; ?></span>
                        </a>

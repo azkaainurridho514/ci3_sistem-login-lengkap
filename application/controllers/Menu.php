@@ -7,7 +7,7 @@ class Menu extends CI_Controller {
     $data['title'] = 'Menu management';
    	$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata['email']])->row_array();
 
-   	$data['getmenu'] = $this->db->get('user_menu')->result_array();
+    $data['getmenu'] = $this->db->get('user_menu')->result_array();
     
     $this->form_validation->set_rules('menu', 'Menu', 'required', ['required' => 'Field menu title tidak boleh kosong!']);
 
@@ -32,7 +32,7 @@ class Menu extends CI_Controller {
         $data['title'] = 'Submenu management';
 	   	$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata['email']])->row_array();
 
-	   	// $data['menu'] = $this->db->get('user_menu')->result_array();
+	   	$data['getmenu'] = $this->db->get('user_menu')->result_array();
         $this->load->model('Menu_model', 'menu');
 	   	$data['getsubmenu'] = $this->menu->getSubmenu();
 
